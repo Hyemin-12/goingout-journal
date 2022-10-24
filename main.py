@@ -18,11 +18,13 @@ while True:
     elif select == 1: # 기숙사생 명단 확인
         app.checkStudent()
     elif select == 2: # 특정 기숙사생 상태 확인
+        checkRoom = int(input("상태를 확인할 기숙사생의 호실 번호를 입력하세요 : "))
+        checkName = input("상태를 확인할 기숙사생의 이름을 입력하세요 : ")
         print()
-        selectRoom = int(input("상태를 확인하려는 학생의 호실을 입력하세요 : "))
-        selectStudent = input("상태를 확인하려는 학생의 이름을 입력해주세요 : ")
+        
+        app.checkParticularStudent(checkRoom, checkName)
+        
         while True:
-            print()
             print("-"*30)
             print("1. 잔류 / 외박 / 외출 상태 변경")
             print("2. 나가기")
@@ -50,11 +52,13 @@ while True:
             if select3 == 1: # 기숙사생 추가
                 addroom = int(input("추가할 기숙사생의 호실 번호를 입력하세요 : "))
                 addname = input("추가할 기숙사생의 이름을 입력하세요 : ")
+
                 app.addStudent(addroom, addname)
                 break
             elif select3 == 2:
                 delRoom = int(input("삭제할 기숙사생의 호실 번호를 입력하세요 : "))
                 delName = input("삭제할 기숙사생의 이름을 입력하세요 : ")
+
                 app.deleteStudent(delRoom, delName)
                 break
             elif select3 == 3: # 메뉴 나가기

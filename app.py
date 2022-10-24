@@ -62,6 +62,28 @@ def checkStudent():
 
     db.close()
 
+def checkParticularStudent(checkRoom, checkName):
+    db = sqlite3.connect(".\dormDB")
+    cur = db.cursor()
+
+    # 데이터 조회
+    cur.execute("SELECT * FROM studentTable WHERE room=? AND name=?", (checkRoom, checkName))
+    print("호실 번호\t학생 이름\t상태\t\t날짜")
+    print('----------------------------------------------------------')
+    while True:
+        row = cur.fetchone()
+        if row == None:
+            break
+        room = row[0]
+        name = row[1]
+        state = row[2]
+        date = row[3]
+        print(f"{room}\t\t{name}\t\t{state}\t\t{date}")
+    print()
+
+    db.close()
+
+
 # 참고 사이트
 # 테이블 유무 확인 https://eggwhite0.tistory.com/138
 # 데이터 조회 https://velog.io/@raed123456/23장.-간단한-데이터베이스#파이썬에서-데이터를-조회하는-코딩--순서
