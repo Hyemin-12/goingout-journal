@@ -11,6 +11,7 @@ room, name, state, date = "","","",""
 # 메인 코드 부분
 # def manageStudent():
 
+# 기숙사생 추가
 def addStudent(addRoom, addName, state = "잔류중"):
     db = sqlite3.connect(".\dormDB")
     cur = db.cursor()
@@ -29,6 +30,7 @@ def addStudent(addRoom, addName, state = "잔류중"):
     db.commit()
     db.close()
 
+# 기숙사생 삭제
 def deleteStudent(delRoom, delName):
     db = sqlite3.connect(".\dormDB")
     cur = db.cursor()
@@ -40,7 +42,7 @@ def deleteStudent(delRoom, delName):
     db.commit()
     db.close()
 
-
+# 기숙사생 확인
 def checkStudent():
     db = sqlite3.connect(".\dormDB")
     cur = db.cursor()
@@ -62,6 +64,7 @@ def checkStudent():
 
     db.close()
 
+# 특정 기숙사생 확인
 def checkParticularStudent(checkRoom, checkName):
     db = sqlite3.connect(".\dormDB")
     cur = db.cursor()

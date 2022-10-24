@@ -50,10 +50,10 @@ while True:
             select3 = int(input("할 일을 선택하세요 : "))
             print()
             if select3 == 1: # 기숙사생 추가
-                addroom = int(input("추가할 기숙사생의 호실 번호를 입력하세요 : "))
-                addname = input("추가할 기숙사생의 이름을 입력하세요 : ")
+                addRoom = int(input("추가할 기숙사생의 호실 번호를 입력하세요 : "))
+                addName = input("추가할 기숙사생의 이름을 입력하세요 : ")
 
-                app.addStudent(addroom, addname)
+                app.addStudent(addRoom, addName)
                 break
             elif select3 == 2:
                 delRoom = int(input("삭제할 기숙사생의 호실 번호를 입력하세요 : "))
