@@ -1,44 +1,4 @@
-# 기숙사생 명단
-roomList = [
-    {101 : ["미림1", "미림2", "미림3"]},
-    {102 : ["미림4", "미림5", "미림6"]},
-    {103 : ["미림7", "미림8", "미림9"]},
-    {104 : ["미림10", "미림11", "미림12"]}
-]
-
-# 잔류 / 외박 / 외출 상태 리스트
-global states
-states = ["잔류중", "외박중", "외출중"]
-
-# 명단 확인 함수
-def showList():
-    for i in range(0, 4):
-        for k, v in roomList[i].items():
-            print(f"{k} : ", end="")
-            for i in range(0, 3):
-                print(v[i], end=" ")
-            print()   
-    print()
-
-# 호실 찾는 함수
-def findRoom(roomNum):
-    for i in range(0, 4):
-        for k, v in roomList[i].items():
-            if(k == roomNum):
-                global selected
-                selected = roomList[i].get(roomNum)
-                print(f"{k} : ", end="")
-                for i in range(0, 3):
-                    print(v[i], end=" ")
-                print()
-
-# 학생 찾는 함수
-def findStudent(studentName, state = states[0]):
-    for i in range(0, 3):
-        if(selected[i] == studentName):
-            print(f"{selected[i]} 학생의 상태 : {state}")
-            print()
-            break
+import app
 
 # 메인 메뉴
 while True:
@@ -56,15 +16,13 @@ while True:
         print("프로그램을 종료합니다.")
         break
     elif select == 1: # 기숙사생 명단 확인
-        showList()
+        app.checkStudent()
     elif select == 2: # 특정 기숙사생 상태 확인
         print()
         selectRoom = int(input("상태를 확인하려는 학생의 호실을 입력하세요 : "))
-        findRoom(selectRoom)
         selectStudent = input("상태를 확인하려는 학생의 이름을 입력해주세요 : ")
         while True:
             print()
-            findStudent(selectStudent)
             print("-"*30)
             print("1. 잔류 / 외박 / 외출 상태 변경")
             print("2. 나가기")
@@ -90,10 +48,14 @@ while True:
             select3 = int(input("할 일을 선택하세요 : "))
             print()
             if select3 == 1: # 기숙사생 추가
-                print("기숙사생 추가")
+                addroom = int(input("추가할 기숙사생의 호실 번호를 입력하세요 : "))
+                addname = input("추가할 기숙사생의 이름을 입력하세요 : ")
+                app.addStudent(addroom, addname)
                 break
             elif select3 == 2:
-                print("기숙사생 삭제")
+                delRoom = int(input("삭제할 기숙사생의 호실 번호를 입력하세요 : "))
+                delName = input("삭제할 기숙사생의 이름을 입력하세요 : ")
+                app.deleteStudent(delRoom, delName)
                 break
             elif select3 == 3: # 메뉴 나가기
                 print("나가기")

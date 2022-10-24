@@ -1,51 +1,68 @@
-# 사용자로부터 데이터를 입력받아서 DB에 저장하는 실습
+from datetime import datetime
 import sqlite3
 
 # 전역 변수 선언
 db, cur = None, None # 연결자, 커서를 저장하는 변수 초기화
-room, studentId, name, state = "","","",""
+room, name, state, date = "","","",""
+
+# 테이블 삭제
+# db.execute("DROP TABLE studentTable")
 
 # 메인 코드 부분
-if __name__ == '__main__':
-    db = sqlite3.connect("E:\python\프로젝트\dormDB")
+# def manageStudent():
+
+def addStudent(addRoom, addName, state = "잔류중"):
+    db = sqlite3.connect(".\dormDB")
     cur = db.cursor()
-    
-    # 테이블 삭제
-    # db.execute("DROP TABLE studentTable")
 
-    # 테이블 추가
-    cur.execute("CREATE TABLE studentTable (room int, studentId int, name char(15), state char(15))")
+    # 테이블 유무 확인
+    cur.execute("SELECT COUNT(*) FROM sqlite_master WHERE name = 'studentTable'")
+    tableCheck = cur.fetchone()
+    if tableCheck[0] == 0:
+        # 테이블 추가
+        cur.execute("CREATE TABLE studentTable (room int, name char(15), state char(15), date char(15))")
 
-    # 무한 루프를 돌면서 사용자로부터 데이터를 입력받는 코드
-    while True:
-        room = input("호실 입력: ")
-        if room == "": # 엔터 치면 종료
-            break
-        studentId = input("학번 입력: ")
-        name = input("기숙사생 이름 입력: ")
-        state = (input("상태 입력(잔류중 / 외박중 / 외출중): "))
+    date = datetime.now().date()
 
-        cur.execute("INSERT INTO studentTable (room, studentId, name, state) values(?, ?, ?, ?)",(room , studentId, name, state))
+    cur.execute("INSERT INTO studentTable (room, name, state, date) VALUES(?, ?, ?, ?)",(addRoom , addName, state, date))
+
     db.commit()
+    db.close()
+
+def deleteStudent(delRoom, delName):
+    db = sqlite3.connect(".\dormDB")
+    cur = db.cursor()
+
+    # 데이터 삭제
+    cur.execute("DELETE FROM studentTable WHERE room=? AND name=?", (delRoom, delName))
+    cur.fetchall()
+
+    db.commit()
+    db.close()
+
+
+def checkStudent():
+    db = sqlite3.connect(".\dormDB")
+    cur = db.cursor()
 
     # 데이터 조회
-    cur.execute("SELECT * FROM studentTable ORDER BY room")
-
-    print("호실 번호\t학번\t학생 이름\t상태")
-    print('------------------------------------------------')
-
+    cur.execute("SELECT * FROM studentTable ORDER BY room, name")
+    print("호실 번호\t학생 이름\t상태\t\t날짜")
+    print('----------------------------------------------------------')
     while True:
         row = cur.fetchone()
         if row == None:
             break
         room = row[0]
-        studentId = row[1]
-        name = row[2]
-        state = row[3]
-        print(f"{room}\t\t{studentId}\t\t{name}\t\t{state}")
+        name = row[1]
+        state = row[2]
+        date = row[3]
+        print(f"{room}\t\t{name}\t\t{state}\t\t{date}")
+    print()
 
     db.close()
 
-
 # 참고 사이트
-# https://velog.io/@raed123456/23장.-간단한-데이터베이스#파이썬에서-데이터를-조회하는-코딩--순서
+# 테이블 유무 확인 https://eggwhite0.tistory.com/138
+# 데이터 조회 https://velog.io/@raed123456/23장.-간단한-데이터베이스#파이썬에서-데이터를-조회하는-코딩--순서
+# 데이터 삭제 https://seong6496.tistory.com/171
