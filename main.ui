@@ -6,47 +6,188 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>1000</width>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="btn_main">
+  <widget class="QPushButton" name="btn_list">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>140</y>
-     <width>171</width>
-     <height>23</height>
+     <x>300</x>
+     <y>150</y>
+     <width>380</width>
+     <height>81</height>
     </rect>
    </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>220</horstretch>
+     <verstretch>40</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>궁서체</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
    <property name="text">
-    <string>MAIN to second window</string>
+    <string>기숙사생 명단 확인</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_status">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>250</y>
+     <width>380</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>궁서체</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>특정 기숙사생 상태 확인</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_edit">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>350</y>
+     <width>380</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>궁서체</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>기숙사생 추가 / 삭제</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_search">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>450</y>
+     <width>380</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>궁서체</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>날짜 별 기숙사생 상태 확인</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="title">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>30</y>
+     <width>321</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>궁서체</family>
+     <pointsize>36</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>외출일지</string>
    </property>
   </widget>
  </widget>
  <resources/>
  <connections>
   <connection>
-   <sender>btn_main</sender>
+   <sender>btn_list</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>btn_main_to_second()</slot>
+   <slot>btn_main_to_list()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>145</x>
-     <y>150</y>
+     <x>170</x>
+     <y>95</y>
     </hint>
     <hint type="destinationlabel">
-     <x>169</x>
-     <y>205</y>
+     <x>332</x>
+     <y>64</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_status</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>btn_main_to_status()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>136</x>
+     <y>118</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>47</x>
+     <y>104</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_edit</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>btn_main_to_edit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>224</x>
+     <y>149</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>338</x>
+     <y>135</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_search</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>btn_main_to_search()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>165</x>
+     <y>177</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>47</x>
+     <y>166</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
-  <slot>btn_main_to_second()</slot>
+  <slot>btn_main_to_list()</slot>
+  <slot>btn_main_to_status()</slot>
+  <slot>btn_main_to_edit()</slot>
+  <slot>btn_main_to_search()</slot>
  </slots>
 </ui>
