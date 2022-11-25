@@ -72,5 +72,42 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btn_add</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>btn_edit_to_add()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>461</x>
+     <y>238</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>651</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_minus</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>btn_edit_to_delete()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>295</x>
+     <y>351</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>461</x>
+     <y>401</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>btn_edit_to_add()</slot>
+  <slot>btn_edit_to_delete()</slot>
+ </slots>
 </ui>

@@ -20,6 +20,12 @@ form_statusWindow = uic.loadUiType(form_status)[0]
 form_edit = resource_path('edit.ui')
 form_editWindow = uic.loadUiType(form_edit)[0]
 
+form_add = resource_path('add.ui')
+form_addWindow = uic.loadUiType(form_add)[0]
+
+form_delete = resource_path('delete.ui')
+form_deleteWindow = uic.loadUiType(form_delete)[0]
+
 form_search = resource_path('search.ui')
 form_searchWindow = uic.loadUiType(form_search)[0]
 
@@ -28,31 +34,38 @@ class WindowClass(QMainWindow, form_class):
         super().__init__()
         self.setupUi(self)
 
-    
+    def closeEvent(self, event):
+        quit_msg = "종료하시겠습니까?"
+        reply = QMessageBox.question(self, 'Message', quit_msg, QMessageBox.Yes, QMessageBox.No)
+
+        if reply == QMessageBox.Yes:
+            event.accept()
+        else:
+            event.ignore()
 
     def btn_main_to_list(self):
-        self.hide()                     # 메인윈도우 숨김
+        self.hide()
         self.list = listWindow()
-        self.list.exec()              # 두번째 창을 닫을 때 까지 기다림
-        self.show()                     # 두번째 창을 닫으면 다시 첫 번째 창이 보여짐짐
+        self.list.exec()
+        self.show()
 
     def btn_main_to_status(self):
-        self.hide()                     # 메인윈도우 숨김
-        self.status = statusWindow()    #
-        self.status.exec()              # 두번째 창을 닫을 때 까지 기다림
-        self.show()                     # 두번째 창을 닫으면 다시 첫 번째 창이 보여짐짐
+        self.hide()
+        self.status = statusWindow()
+        self.status.exec()
+        self.show()
 
     def btn_main_to_edit(self):
-        self.hide()                     # 메인윈도우 숨김
+        self.hide()
         self.edit = editWindow()
-        self.edit.exec()               # 두번째 창을 닫을 때 까지 기다림
-        self.show()                     # 두번째 창을 닫으면 다시 첫 번째 창이 보여짐짐
+        self.edit.exec()
+        self.show()
 
     def btn_main_to_search(self):
-        self.hide()                     # 메인윈도우 숨김
-        self.search = searchWindow()    #
-        self.search.exec()              # 두번째 창을 닫을 때 까지 기다림
-        self.show()                     # 두번째 창을 닫으면 다시 첫 번째 창이 보여짐짐
+        self.hide()
+        self.search = searchWindow()
+        self.search.exec()
+        self.show()
 
 class listWindow(QDialog, QWidget, form_listWindow):
     def __init__(self):
@@ -81,6 +94,35 @@ class editWindow(QDialog, QWidget, form_editWindow):
     def initUi(self):
         self.setupUi(self)
 
+    def btn_edit_to_add(self):
+        self.hide()
+        self.add = addWindow()
+        self.add.exec()
+        self.show()
+
+    def btn_edit_to_delete(self):
+        self.hide()
+        self.delete = deleteWindow()
+        self.delete.exec()
+        self.show()
+
+class addWindow(QDialog, QWidget, form_addWindow):
+    def __init__(self):
+        super(addWindow, self).__init__()
+        self.initUi()
+        self.show()
+
+    def initUi(self):
+        self.setupUi(self)
+
+class deleteWindow(QDialog, QWidget, form_deleteWindow):
+    def __init__(self):
+        super(deleteWindow, self).__init__()
+        self.initUi()
+        self.show()
+
+    def initUi(self):
+        self.setupUi(self)
 class searchWindow(QDialog, QWidget, form_searchWindow):
     def __init__(self):
         super(searchWindow, self).__init__()
