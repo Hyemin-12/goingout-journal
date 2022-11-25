@@ -121,7 +121,46 @@
     </font>
    </property>
   </widget>
+  <widget class="QPushButton" name="btn_back">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>460</y>
+     <width>191</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>궁서체</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>뒤로가기</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btn_back</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>btn_add_to_edit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>395</x>
+     <y>482</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>604</x>
+     <y>450</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>btn_add_to_edit()</slot>
+ </slots>
 </ui>
