@@ -49,8 +49,9 @@ def checkStudent():
 
     # 데이터 조회
     cur.execute("SELECT * FROM studentTable ORDER BY room, name")
-    print("호실 번호\t학생 이름\t상태\t\t날짜")
-    print('----------------------------------------------------------')
+    
+    res = []
+
     while True:
         row = cur.fetchone()
         if row == None:
@@ -59,8 +60,11 @@ def checkStudent():
         name = row[1]
         state = row[2]
         date = row[3]
-        print(f"{room}\t\t{name}\t\t{state}\t\t{date}")
-    print()
+
+        text = f"{room}\t{name}\t\t{state}\t\t{date}"
+        res.append(text)
+
+    return res
 
     db.close()
 

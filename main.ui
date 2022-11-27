@@ -189,5 +189,6 @@
   <slot>btn_main_to_status()</slot>
   <slot>btn_main_to_edit()</slot>
   <slot>btn_main_to_search()</slot>
+  <slot>show_list()</slot>
  </slots>
 </ui>

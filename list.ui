@@ -13,16 +13,6 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QListView" name="student_list">
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>89</y>
-     <width>631</width>
-     <height>441</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -42,7 +32,66 @@
     <string>기숙사생 명단</string>
    </property>
   </widget>
+  <widget class="QLabel" name="student_list">
+   <property name="geometry">
+    <rect>
+     <x>103</x>
+     <y>111</y>
+     <width>601</width>
+     <height>421</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>궁서체</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_show">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>240</y>
+     <width>251</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>궁서체</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>명단 확인</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btn_show</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>show_list()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>411</x>
+     <y>262</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>722</x>
+     <y>76</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>checkStudent()</slot>
+  <slot>show_list()</slot>
+ </slots>
 </ui>

@@ -2,6 +2,8 @@ import os
 import sys
 
 from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
+from app import *
 from PyQt5 import uic
 
 def resource_path(relative_path):
@@ -94,6 +96,14 @@ class listWindow(QDialog, QWidget, form_listWindow):
     def initUi(self):
         self.setupUi(self)
 
+    def show_list(self):
+        self.btn_show.hide()
+        self.text = checkStudent()
+        self.contents = ""
+        for i in self.text:
+            self.contents += i
+            self.contents += "\n"
+        self.student_list.setText(self.contents)
 # 특정 기숙사생 상태 확인 페이지
 class statusWindow(QDialog, QWidget, form_statusWindow):
     def __init__(self):
