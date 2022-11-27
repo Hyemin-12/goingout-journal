@@ -89,24 +89,23 @@ def getParticularStudents(checkRoom):
     db.close()
 
 # 특정 기숙사생 확인
-def checkParticularStudent(checkRoom, checkName):
+def checkParticularStudent(checkName):
     db = sqlite3.connect(".\dormDB")
     cur = db.cursor()
 
     # 데이터 조회
-    cur.execute("SELECT * FROM studentTable WHERE room=? AND name=?", (checkRoom, checkName))
-    print("호실 번호\t학생 이름\t상태\t\t날짜")
-    print('----------------------------------------------------------')
-    while True:
-        row = cur.fetchone()
-        if row == None:
-            break
-        room = row[0]
-        name = row[1]
-        state = row[2]
-        date = row[3]
-        print(f"{room}\t\t{name}\t\t{state}\t\t{date}")
-    print()
+    cur.execute("SELECT * FROM studentTable WHERE name=?", [checkName])
+
+    res = []
+
+    row = cur.fetchone()
+    name = row[1]
+    state = row[2]
+
+    res.append(name)
+    res.append(state)
+
+    return res
 
     db.close()
 

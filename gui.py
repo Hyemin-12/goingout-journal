@@ -96,6 +96,7 @@ class listWindow(QDialog, QWidget, form_listWindow):
     def initUi(self):
         self.setupUi(self)
 
+    # 기숙사생 명단 확인
     def show_list(self):
         self.btn_show.hide()
         self.text = checkStudent()
@@ -104,6 +105,7 @@ class listWindow(QDialog, QWidget, form_listWindow):
             self.contents += i
             self.contents += "\n"
         self.student_list.setText(self.contents)
+
 # 특정 기숙사생 상태 확인 페이지
 class statusWindow(QDialog, QWidget, form_statusWindow):
     def __init__(self):
@@ -114,6 +116,7 @@ class statusWindow(QDialog, QWidget, form_statusWindow):
     def initUi(self):
         self.setupUi(self)
 
+    # 특정 호실 기숙사생 불러오기
     def getText(self):
         self.check_room = self.room_number.toPlainText()
         self.names = getParticularStudents(self.check_room)
@@ -121,6 +124,27 @@ class statusWindow(QDialog, QWidget, form_statusWindow):
         self.member2.setText(self.names[1])
         self.member3.setText(self.names[2])
         # self.member4.setText(self.names[3])
+
+    # 특정 기숙사생 상태 확인하기
+    def checkStatus(self):
+        if self.member1.isChecked(): 
+            self.get_name = checkParticularStudent(self.member1.text())[0]
+            self.get_status = checkParticularStudent(self.member1.text())[1]
+        elif self.member2.isChecked():
+            self.get_name = checkParticularStudent(self.member2.text())[0]
+            self.get_status = checkParticularStudent(self.member2.text())[1]
+        elif self.member3.isChecked(): 
+            self.get_name = checkParticularStudent(self.member3.text())[0]
+            self.get_status = checkParticularStudent(self.member3.text())[1]
+        elif self.member4.isChecked(): 
+            self.get_name = checkParticularStudent(self.member4.text())[0]
+            self.get_status = checkParticularStudent(self.member4.text())[1]
+
+        self.selected.setText(f"{self.get_name} : ")
+        self.status.setText(self.get_status)
+
+
+
         
 # 기숙사생 추가 / 삭제 페이지
 class editWindow(QDialog, QWidget, form_editWindow):

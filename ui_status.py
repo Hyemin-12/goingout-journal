@@ -34,7 +34,7 @@ class Ui_Form(object):
         self.status_title.setFont(font)
         self.status_title.setObjectName("status_title")
         self.selected = QtWidgets.QLabel(Form)
-        self.selected.setGeometry(QtCore.QRect(200, 470, 121, 41))
+        self.selected.setGeometry(QtCore.QRect(170, 470, 151, 41))
         font = QtGui.QFont()
         font.setFamily("궁서체")
         font.setPointSize(18)
@@ -89,6 +89,10 @@ class Ui_Form(object):
 
         self.retranslateUi(Form)
         self.btn_search_room.clicked.connect(Form.getText) # type: ignore
+        self.member1.clicked.connect(Form.checkStatus) # type: ignore
+        self.member2.clicked.connect(Form.checkStatus) # type: ignore
+        self.member3.clicked.connect(Form.checkStatus) # type: ignore
+        self.member4.clicked.connect(Form.checkStatus) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
