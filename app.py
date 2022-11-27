@@ -68,6 +68,26 @@ def checkStudent():
 
     db.close()
 
+# 특정 호실 기숙사생 이름 가져오기
+def getParticularStudents(checkRoom):
+    db = sqlite3.connect(".\dormDB")
+    cur = db.cursor()
+
+    cur.execute("SELECT * FROM studentTable WHERE room=?", [checkRoom])
+
+    res = []
+
+    while True:
+        row = cur.fetchone()
+        if row == None:
+            break
+        name = row[1]
+        res.append(name)
+
+    return res
+
+    db.close()
+
 # 특정 기숙사생 확인
 def checkParticularStudent(checkRoom, checkName):
     db = sqlite3.connect(".\dormDB")

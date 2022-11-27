@@ -114,6 +114,14 @@ class statusWindow(QDialog, QWidget, form_statusWindow):
     def initUi(self):
         self.setupUi(self)
 
+    def getText(self):
+        self.check_room = self.room_number.toPlainText()
+        self.names = getParticularStudents(self.check_room)
+        self.member1.setText(self.names[0])
+        self.member2.setText(self.names[1])
+        self.member3.setText(self.names[2])
+        # self.member4.setText(self.names[3])
+        
 # 기숙사생 추가 / 삭제 페이지
 class editWindow(QDialog, QWidget, form_editWindow):
     def __init__(self):
