@@ -25,7 +25,7 @@ def addStudent(addRoom, addName, state = "잔류중"):
 
     date = datetime.now().date()
 
-    cur.execute("INSERT INTO studentTable (room, name, state, date) VALUES(?, ?, ?, ?)",(addRoom , addName, state, date))
+    cur.execute("INSERT INTO studentTable (room, name, state, date) VALUES(?, ?, ?, ?)",[addRoom , addName, state, date])
 
     db.commit()
     db.close()
@@ -36,7 +36,7 @@ def deleteStudent(delRoom, delName):
     cur = db.cursor()
 
     # 데이터 삭제
-    cur.execute("DELETE FROM studentTable WHERE room=? AND name=?", (delRoom, delName))
+    cur.execute("DELETE FROM studentTable WHERE room=? AND name=?", [delRoom, delName])
     cur.fetchall()
 
     db.commit()
@@ -114,8 +114,11 @@ def changeParticularStudent(name, status):
     db = sqlite3.connect(".\dormDB")
     cur = db.cursor()
 
-    # 데이터 조회
-    cur.execute("UPDATE studentTable SET state=? WHERE name=?;", [status, name])
+    date = datetime.now().date()
+    
+    # 데이터 업데이트 / 조회
+    cur.execute("UPDATE studentTable SET state=?, date=? WHERE name=?", [status, date, name])
+    db.commit()
     cur.execute("SELECT * FROM studentTable WHERE name=?", [name])
 
     row = cur.fetchone()

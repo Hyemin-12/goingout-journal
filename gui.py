@@ -239,6 +239,8 @@ class searchWindow(QDialog, QWidget, form_searchWindow):
     def initUi(self):
         self.setupUi(self)
 
+    # 날짜, 호실, 이름 입력해서 검색하기
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     myWindow = WindowClass()
