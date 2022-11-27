@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>300</x>
-     <y>150</y>
+     <y>230</y>
      <width>380</width>
      <height>81</height>
     </rect>
@@ -42,7 +42,7 @@
    <property name="geometry">
     <rect>
      <x>300</x>
-     <y>250</y>
+     <y>330</y>
      <width>380</width>
      <height>81</height>
     </rect>
@@ -61,7 +61,7 @@
    <property name="geometry">
     <rect>
      <x>300</x>
-     <y>350</y>
+     <y>430</y>
      <width>380</width>
      <height>81</height>
     </rect>
@@ -80,7 +80,7 @@
    <property name="geometry">
     <rect>
      <x>300</x>
-     <y>450</y>
+     <y>530</y>
      <width>380</width>
      <height>81</height>
     </rect>
@@ -99,7 +99,7 @@
    <property name="geometry">
     <rect>
      <x>350</x>
-     <y>30</y>
+     <y>110</y>
      <width>321</width>
      <height>111</height>
     </rect>
@@ -126,8 +126,8 @@
    <slot>btn_main_to_list()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>170</x>
-     <y>95</y>
+     <x>300</x>
+     <y>230</y>
     </hint>
     <hint type="destinationlabel">
      <x>332</x>
@@ -142,8 +142,8 @@
    <slot>btn_main_to_status()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>136</x>
-     <y>118</y>
+     <x>300</x>
+     <y>330</y>
     </hint>
     <hint type="destinationlabel">
      <x>47</x>
@@ -158,28 +158,12 @@
    <slot>btn_main_to_edit()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>224</x>
-     <y>149</y>
+     <x>300</x>
+     <y>430</y>
     </hint>
     <hint type="destinationlabel">
      <x>338</x>
      <y>135</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btn_search</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>btn_main_to_search()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>165</x>
-     <y>177</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>47</x>
-     <y>166</y>
     </hint>
    </hints>
   </connection>

@@ -35,9 +35,9 @@ form_addWindow = uic.loadUiType(form_add)[0]
 form_delete = resource_path('delete.ui')
 form_deleteWindow = uic.loadUiType(form_delete)[0]
 
-# 날짜 별 기숙사생 상태 확인 페이지 ui
-form_search = resource_path('search.ui')
-form_searchWindow = uic.loadUiType(form_search)[0]
+# # 날짜 별 기숙사생 상태 확인 페이지 ui
+# form_search = resource_path('search.ui')
+# form_searchWindow = uic.loadUiType(form_search)[0]
 
 ##################### 기능 구현 #####################
 # 메인 페이지
@@ -45,6 +45,7 @@ class WindowClass(QMainWindow, form_class):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.btn_search.hide()
 
     # 종료하기 전 확인
     def closeEvent(self, event):
@@ -79,12 +80,12 @@ class WindowClass(QMainWindow, form_class):
         self.edit.exec()
         self.show()
 
-    # 날짜 별 기숙사생 상태 확인 페이지로 이동
-    def btn_main_to_search(self):
-        self.hide()
-        self.search = searchWindow()
-        self.search.exec()
-        self.show()
+    # # 날짜 별 기숙사생 상태 확인 페이지로 이동
+    # def btn_main_to_search(self):
+    #     self.hide()
+    #     self.search = searchWindow()
+    #     self.search.exec()
+    #     self.show()
 
 # 기숙사생 명단 페이지
 class listWindow(QDialog, QWidget, form_listWindow):
@@ -229,17 +230,17 @@ class deleteWindow(QDialog, QWidget, form_deleteWindow):
         quit_msg = "성공적으로 삭제되었습니다!"
         QMessageBox.information(self, 'Message', quit_msg)
         
-# 날짜 별 기숙사생 상태 확인 페이지
-class searchWindow(QDialog, QWidget, form_searchWindow):
-    def __init__(self):
-        super(searchWindow, self).__init__()
-        self.initUi()
-        self.show()
+# # 날짜 별 기숙사생 상태 확인 페이지
+# class searchWindow(QDialog, QWidget, form_searchWindow):
+#     def __init__(self):
+#         super(searchWindow, self).__init__()
+#         self.initUi()
+#         self.show()
 
-    def initUi(self):
-        self.setupUi(self)
+#     def initUi(self):
+#         self.setupUi(self)
 
-    # 날짜, 호실, 이름 입력해서 검색하기
+#     # 날짜, 호실, 이름 입력해서 검색하기
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
