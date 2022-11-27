@@ -109,6 +109,21 @@ def checkParticularStudent(checkName):
 
     db.close()
 
+# 특정 기숙사생 상태 변경
+def changeParticularStudent(name, status):
+    db = sqlite3.connect(".\dormDB")
+    cur = db.cursor()
+
+    # 데이터 조회
+    cur.execute("UPDATE studentTable SET state=? WHERE name=?;", [status, name])
+    cur.execute("SELECT * FROM studentTable WHERE name=?", [name])
+
+    row = cur.fetchone()
+    state = row[2]
+
+    return state
+
+    db.close()
 
 # 참고 사이트
 # 테이블 유무 확인 https://eggwhite0.tistory.com/138

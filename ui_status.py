@@ -67,7 +67,7 @@ class Ui_Form(object):
         self.status_title_2.setFont(font)
         self.status_title_2.setObjectName("status_title_2")
         self.groupBox = QtWidgets.QGroupBox(Form)
-        self.groupBox.setGeometry(QtCore.QRect(140, 280, 531, 171))
+        self.groupBox.setGeometry(QtCore.QRect(140, 280, 531, 151))
         self.groupBox.setTitle("")
         self.groupBox.setObjectName("groupBox")
         self.member4 = QtWidgets.QRadioButton(self.groupBox)
@@ -86,6 +86,38 @@ class Ui_Form(object):
         self.member3.setGeometry(QtCore.QRect(70, 90, 171, 51))
         self.member3.setText("")
         self.member3.setObjectName("member3")
+        self.status_group = QtWidgets.QGroupBox(Form)
+        self.status_group.setGeometry(QtCore.QRect(450, 430, 221, 161))
+        self.status_group.setTitle("")
+        self.status_group.setObjectName("status_group")
+        self.status1 = QtWidgets.QRadioButton(self.status_group)
+        self.status1.setGeometry(QtCore.QRect(40, 20, 141, 31))
+        font = QtGui.QFont()
+        font.setFamily("궁서체")
+        font.setPointSize(14)
+        self.status1.setFont(font)
+        self.status1.setObjectName("status1")
+        self.status2 = QtWidgets.QRadioButton(self.status_group)
+        self.status2.setGeometry(QtCore.QRect(40, 60, 140, 30))
+        font = QtGui.QFont()
+        font.setFamily("궁서체")
+        font.setPointSize(14)
+        self.status2.setFont(font)
+        self.status2.setObjectName("status2")
+        self.status3 = QtWidgets.QRadioButton(self.status_group)
+        self.status3.setGeometry(QtCore.QRect(40, 100, 140, 30))
+        font = QtGui.QFont()
+        font.setFamily("궁서체")
+        font.setPointSize(14)
+        self.status3.setFont(font)
+        self.status3.setObjectName("status3")
+        self.save_status = QtWidgets.QPushButton(Form)
+        self.save_status.setGeometry(QtCore.QRect(640, 480, 100, 50))
+        font = QtGui.QFont()
+        font.setFamily("궁서체")
+        font.setPointSize(12)
+        self.save_status.setFont(font)
+        self.save_status.setObjectName("save_status")
 
         self.retranslateUi(Form)
         self.btn_search_room.clicked.connect(Form.getText) # type: ignore
@@ -93,6 +125,8 @@ class Ui_Form(object):
         self.member2.clicked.connect(Form.checkStatus) # type: ignore
         self.member3.clicked.connect(Form.checkStatus) # type: ignore
         self.member4.clicked.connect(Form.checkStatus) # type: ignore
+        self.btn_change_status.clicked.connect(Form.changeStatus) # type: ignore
+        self.save_status.clicked.connect(Form.saveStatus) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
@@ -102,3 +136,7 @@ class Ui_Form(object):
         self.status_title.setText(_translate("Form", "기숙사생의 이름을 선택해주세요."))
         self.btn_change_status.setText(_translate("Form", "상태 변경"))
         self.status_title_2.setText(_translate("Form", "호실 번호 입력 : "))
+        self.status1.setText(_translate("Form", "잔류중"))
+        self.status2.setText(_translate("Form", "외출중"))
+        self.status3.setText(_translate("Form", "외박중"))
+        self.save_status.setText(_translate("Form", "저장하기"))

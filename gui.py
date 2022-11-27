@@ -115,6 +115,8 @@ class statusWindow(QDialog, QWidget, form_statusWindow):
 
     def initUi(self):
         self.setupUi(self)
+        self.status_group.hide()
+        self.save_status.hide()
 
     # 특정 호실 기숙사생 불러오기
     def getText(self):
@@ -126,21 +128,38 @@ class statusWindow(QDialog, QWidget, form_statusWindow):
 
     # 특정 기숙사생 상태 확인하기
     def checkStatus(self):
-        if self.member1.isChecked(): 
+        self.names = getParticularStudents(self.room_number.toPlainText())
+        if self.member1.isChecked():
             self.get_name = checkParticularStudent(self.member1.text())[0]
             self.get_status = checkParticularStudent(self.member1.text())[1]
         elif self.member2.isChecked():
             self.get_name = checkParticularStudent(self.member2.text())[0]
             self.get_status = checkParticularStudent(self.member2.text())[1]
-        elif self.member3.isChecked(): 
+        elif self.member3.isChecked():
             self.get_name = checkParticularStudent(self.member3.text())[0]
             self.get_status = checkParticularStudent(self.member3.text())[1]
-        elif self.member4.isChecked(): 
+        elif self.member4.isChecked():
             self.get_name = checkParticularStudent(self.member4.text())[0]
             self.get_status = checkParticularStudent(self.member4.text())[1]
 
         self.selected.setText(f"{self.get_name} : ")
         self.status.setText(self.get_status)
+
+    def changeStatus(self):
+        self.btn_change_status.hide()
+        self.status_group.show()
+        self.save_status.show()
+
+    def saveStatus(self):
+        if self.status1.isChecked():
+            self.status.setText(changeParticularStudent(self.get_name, "잔류중"))
+        elif self.status2.isChecked():
+            self.status.setText(changeParticularStudent(self.get_name, "외출중"))
+        elif self.status3.isChecked():
+            self.status.setText(changeParticularStudent(self.get_name, "외박중"))
+        self.status_group.hide()
+        self.save_status.hide()
+        self.btn_change_status.show()
         
 # 기숙사생 추가 / 삭제 페이지
 class editWindow(QDialog, QWidget, form_editWindow):

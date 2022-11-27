@@ -149,7 +149,7 @@
      <x>140</x>
      <y>280</y>
      <width>531</width>
-     <height>171</height>
+     <height>151</height>
     </rect>
    </property>
    <property name="title">
@@ -207,6 +207,95 @@
      <string/>
     </property>
    </widget>
+  </widget>
+  <widget class="QGroupBox" name="status_group">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>430</y>
+     <width>221</width>
+     <height>161</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QRadioButton" name="status1">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>20</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>궁서체</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>잔류중</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="status2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>60</y>
+      <width>140</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>궁서체</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>외출중</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="status3">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>100</y>
+      <width>140</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>궁서체</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>외박중</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="save_status">
+   <property name="geometry">
+    <rect>
+     <x>640</x>
+     <y>480</y>
+     <width>100</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>궁서체</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>저장하기</string>
+   </property>
   </widget>
  </widget>
  <resources/>
@@ -291,9 +380,43 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>btn_change_status</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>changeStatus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>468</x>
+     <y>479</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>443</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>save_status</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>saveStatus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>691</x>
+     <y>497</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>748</x>
+     <y>433</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>getText()</slot>
   <slot>checkStatus()</slot>
+  <slot>changeStatus()</slot>
+  <slot>saveStatus()</slot>
  </slots>
 </ui>
