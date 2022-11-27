@@ -118,8 +118,7 @@ class statusWindow(QDialog, QWidget, form_statusWindow):
 
     # 특정 호실 기숙사생 불러오기
     def getText(self):
-        self.check_room = self.room_number.toPlainText()
-        self.names = getParticularStudents(self.check_room)
+        self.names = getParticularStudents(self.room_number.toPlainText())
         self.member1.setText(self.names[0])
         self.member2.setText(self.names[1])
         self.member3.setText(self.names[2])
@@ -142,9 +141,6 @@ class statusWindow(QDialog, QWidget, form_statusWindow):
 
         self.selected.setText(f"{self.get_name} : ")
         self.status.setText(self.get_status)
-
-
-
         
 # 기숙사생 추가 / 삭제 페이지
 class editWindow(QDialog, QWidget, form_editWindow):
@@ -188,6 +184,12 @@ class addWindow(QDialog, QWidget, form_addWindow):
     def btn_add_to_edit(self):
         self.close()
 
+    # 기숙사생 추가하기
+    def getAddInput(self):
+        addStudent(self.add_room_number.toPlainText(), self.add_name.toPlainText())
+        quit_msg = "성공적으로 추가되었습니다!"
+        QMessageBox.information(self, 'Message', quit_msg)
+
 # 기숙사생 삭제 페이지로 이동
 class deleteWindow(QDialog, QWidget, form_deleteWindow):
     def __init__(self):
@@ -201,6 +203,12 @@ class deleteWindow(QDialog, QWidget, form_deleteWindow):
     # 기숙사생 추가 / 삭제 페이지로 이동
     def btn_delete_to_edit(self):
         self.close()
+
+    # 기숙사생 삭제하기
+    def getDeleteInput(self):
+        deleteStudent(self.delete_room_number.toPlainText(), self.delete_name.toPlainText())
+        quit_msg = "성공적으로 삭제되었습니다!"
+        QMessageBox.information(self, 'Message', quit_msg)
         
 # 날짜 별 기숙사생 상태 확인 페이지
 class searchWindow(QDialog, QWidget, form_searchWindow):
