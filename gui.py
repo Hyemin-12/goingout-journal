@@ -118,9 +118,14 @@ class statusWindow(QDialog, QWidget, form_statusWindow):
         self.setupUi(self)
         self.status_group.hide()
         self.save_status.hide()
+        self.groupBox.hide()
+        self.status_title.hide()
+        self.btn_change_status.hide()
 
     # 특정 호실 기숙사생 불러오기
     def getText(self):
+        self.status_title.show()
+        self.groupBox.show()
         self.names = getParticularStudents(self.room_number.toPlainText())
         self.member1.setText(self.names[0])
         self.member2.setText(self.names[1])
@@ -129,6 +134,7 @@ class statusWindow(QDialog, QWidget, form_statusWindow):
 
     # 특정 기숙사생 상태 확인하기
     def checkStatus(self):
+        self.btn_change_status.show()
         self.names = getParticularStudents(self.room_number.toPlainText())
         if self.member1.isChecked():
             self.get_name = checkParticularStudent(self.member1.text())[0]
