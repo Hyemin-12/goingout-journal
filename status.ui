@@ -19,6 +19,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(252, 252, 252);</string>
+  </property>
   <widget class="QPushButton" name="btn_search_room">
    <property name="geometry">
     <rect>
@@ -33,6 +36,12 @@
      <family>궁서체</family>
      <pointsize>14</pointsize>
     </font>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(200, 200, 255);</string>
    </property>
    <property name="text">
     <string>검색</string>
@@ -110,6 +119,9 @@
      <pointsize>12</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(255, 200, 200);</string>
+   </property>
    <property name="text">
     <string>상태 변경</string>
    </property>
@@ -152,6 +164,12 @@
      <height>151</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>궁서체</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
    <property name="title">
     <string/>
    </property>
@@ -163,6 +181,12 @@
       <width>171</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>궁서체</family>
+      <pointsize>16</pointsize>
+     </font>
     </property>
     <property name="text">
      <string/>
@@ -177,6 +201,12 @@
       <height>51</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>궁서체</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -189,6 +219,12 @@
       <width>171</width>
       <height>51</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>궁서체</family>
+      <pointsize>16</pointsize>
+     </font>
     </property>
     <property name="text">
      <string/>
@@ -203,6 +239,12 @@
       <height>51</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>궁서체</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -213,7 +255,7 @@
     <rect>
      <x>450</x>
      <y>430</y>
-     <width>221</width>
+     <width>220</width>
      <height>161</height>
     </rect>
    </property>
@@ -292,6 +334,9 @@
      <family>궁서체</family>
      <pointsize>12</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(255, 200, 255);</string>
    </property>
    <property name="text">
     <string>저장하기</string>

@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(252, 252, 252);</string>
+  </property>
   <widget class="QPushButton" name="btn_add">
    <property name="geometry">
     <rect>
@@ -27,6 +30,9 @@
      <family>궁서체</family>
      <pointsize>14</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(255, 150, 150);</string>
    </property>
    <property name="text">
     <string>기숙사생 추가</string>
@@ -46,6 +52,9 @@
      <family>궁서체</family>
      <pointsize>14</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(255, 180, 150);</string>
    </property>
    <property name="text">
     <string>기숙사생 삭제</string>
@@ -84,6 +93,9 @@
      <family>궁서체</family>
      <pointsize>14</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(255, 255, 140);</string>
    </property>
    <property name="text">
     <string>뒤로가기</string>
