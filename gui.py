@@ -255,3 +255,11 @@ if __name__ == '__main__':
     myWindow = WindowClass()
     myWindow.show()
     app.exec_()
+
+# 참고 사이트
+# 창 닫을 때 팝업 : https://investox.tistory.com/entry/파이썬-PyQt5-창-닫힐-때-이벤트-실행하기
+# 버튼 클릭 시 창 전환 : https://trading-for-chicken.tistory.com/23
+# QMessageBox 사용 : https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=huntingbear21&logNo=221825482802
+# QRadioButton 사용 : https://wikidocs.net/35486
+# QPlainTextEdit 사용 : https://wikidocs.net/35492
+# QScrollArea 사용 : https://wikidocs.net/163920
