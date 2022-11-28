@@ -132,7 +132,7 @@ class statusWindow(QDialog, QWidget, form_statusWindow):
         self.member1.setText(self.names[0])
         self.member2.setText(self.names[1])
         self.member3.setText(self.names[2])
-        # self.member4.setText(self.names[3])
+        self.member4.setText(self.names[3])
 
     # 특정 기숙사생 상태 확인하기
     def checkStatus(self):
