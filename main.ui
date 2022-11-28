@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background:rgb(255, 255, 255);</string>
+  </property>
   <widget class="QPushButton" name="btn_list">
    <property name="geometry">
     <rect>
@@ -34,6 +37,9 @@
      <pointsize>14</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(255, 150, 150);</string>
+   </property>
    <property name="text">
     <string>기숙사생 명단 확인</string>
    </property>
@@ -52,6 +58,9 @@
      <family>궁서체</family>
      <pointsize>14</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(255, 180, 150);</string>
    </property>
    <property name="text">
     <string>특정 기숙사생 상태 확인</string>
@@ -72,6 +81,9 @@
      <pointsize>14</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(255, 255, 120);</string>
+   </property>
    <property name="text">
     <string>기숙사생 추가 / 삭제</string>
    </property>
@@ -90,6 +102,9 @@
      <family>궁서체</family>
      <pointsize>14</pointsize>
     </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(150, 255, 180);</string>
    </property>
    <property name="text">
     <string>날짜 별 기숙사생 상태 확인</string>
