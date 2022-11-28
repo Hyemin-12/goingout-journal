@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>list</class>
+ <widget class="QWidget" name="list">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -32,13 +32,48 @@
     <string>기숙사생 명단</string>
    </property>
   </widget>
+  <widget class="QScrollArea" name="scrollArea">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>138</y>
+     <width>651</width>
+     <height>381</height>
+    </rect>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAsNeeded</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QAbstractScrollArea::AdjustToContents</enum>
+   </property>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>649</width>
+      <height>379</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
   <widget class="QLabel" name="student_list">
    <property name="geometry">
     <rect>
-     <x>103</x>
-     <y>111</y>
-     <width>601</width>
-     <height>421</height>
+     <x>130</x>
+     <y>530</y>
+     <width>531</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
@@ -51,13 +86,13 @@
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="btn_show">
+  <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>240</y>
-     <width>251</width>
-     <height>91</height>
+     <x>60</x>
+     <y>80</y>
+     <width>701</width>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
@@ -67,29 +102,12 @@
     </font>
    </property>
    <property name="text">
-    <string>명단 확인</string>
+    <string>호실    이름          상태        업데이트 날짜</string>
    </property>
   </widget>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>btn_show</sender>
-   <signal>clicked()</signal>
-   <receiver>Form</receiver>
-   <slot>show_list()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>411</x>
-     <y>262</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>722</x>
-     <y>76</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
  <slots>
   <slot>checkStudent()</slot>
   <slot>show_list()</slot>

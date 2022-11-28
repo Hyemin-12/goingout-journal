@@ -5,6 +5,8 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from app import *
 from PyQt5 import uic
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 
 def resource_path(relative_path):
     base_path = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
@@ -93,19 +95,19 @@ class listWindow(QDialog, QWidget, form_listWindow):
         super(listWindow, self).__init__()
         self.initUi()
         self.show()
+        self.text = checkStudent()
+        self.contents = ""
+        for i in range(0, len(self.text)) :
+            if i == len(self.text) - 1:
+                self.contents += self.text[i]
+            else:
+                self.contents += self.text[i]
+                self.contents += "\n"
+        self.student_list.setText(self.contents)
+        self.scrollArea.setWidget(self.student_list)
 
     def initUi(self):
         self.setupUi(self)
-
-    # 기숙사생 명단 확인
-    def show_list(self):
-        self.btn_show.hide()
-        self.text = checkStudent()
-        self.contents = ""
-        for i in self.text:
-            self.contents += i
-            self.contents += "\n"
-        self.student_list.setText(self.contents)
 
 # 특정 기숙사생 상태 확인 페이지
 class statusWindow(QDialog, QWidget, form_statusWindow):
