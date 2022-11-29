@@ -128,27 +128,43 @@ class statusWindow(QDialog, QWidget, form_statusWindow):
     def getText(self):
         self.status_title.show()
         self.groupBox.show()
+        self.member1.hide()
+        self.member2.hide()
+        self.member3.hide()
+        self.member4.hide()
         self.names = getParticularStudents(self.room_number.toPlainText())
         if len(self.names) == 1:
+            self.status_title.setText("기숙사생의 이름을 선택해주세요.")
+            self.status_title.setText("빈 방입니다.")
+            self.member1.show()
             self.member1.setText(self.names[0])
-            self.member2.hide()
-            self.member3.hide()
-            self.member4.hide()
         elif len(self.names) == 2:
+            self.status_title.setText("기숙사생의 이름을 선택해주세요.")
+            self.member1.show()
+            self.member2.show()
             self.member1.setText(self.names[0])
             self.member2.setText(self.names[1])
-            self.member3.hide()
-            self.member4.hide()
         elif len(self.names) == 3:
+            self.status_title.setText("기숙사생의 이름을 선택해주세요.")
+            self.member1.show() 
+            self.member2.show()
+            self.member3.show()
             self.member1.setText(self.names[0])
             self.member2.setText(self.names[1])
             self.member3.setText(self.names[2])
-            self.member4.hide()
-        else:
+        elif len(self.names) == 4:
+            self.status_title.setText("기숙사생의 이름을 선택해주세요.")
+            self.member1.show()
+            self.member2.show()
+            self.member3.show()
+            self.member4.show()
             self.member1.setText(self.names[0])
             self.member2.setText(self.names[1])
             self.member3.setText(self.names[2])
             self.member4.setText(self.names[3])
+        else:
+            self.groupBox.hide()
+            self.status_title.setText("빈 방입니다.")
 
     # 특정 기숙사생 상태 확인하기
     def checkStatus(self):
