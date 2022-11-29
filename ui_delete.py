@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\python\프로젝트\delete.ui'
+# Form implementation generated from reading ui file 'd:\python\외출일지\delete.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #

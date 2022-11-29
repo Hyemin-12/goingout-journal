@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\python\프로젝트\list.ui'
+# Form implementation generated from reading ui file 'd:\python\외출일지\list.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -11,25 +11,50 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(800, 600)
-        self.student_list = QtWidgets.QListView(Form)
-        self.student_list.setGeometry(QtCore.QRect(80, 89, 631, 441))
-        self.student_list.setObjectName("student_list")
-        self.label = QtWidgets.QLabel(Form)
+class Ui_list(object):
+    def setupUi(self, list):
+        list.setObjectName("list")
+        list.resize(800, 600)
+        self.label = QtWidgets.QLabel(list)
         self.label.setGeometry(QtCore.QRect(260, 30, 381, 51))
         font = QtGui.QFont()
         font.setFamily("궁서체")
         font.setPointSize(22)
         self.label.setFont(font)
         self.label.setObjectName("label")
+        self.scrollArea = QtWidgets.QScrollArea(list)
+        self.scrollArea.setGeometry(QtCore.QRect(70, 138, 651, 381))
+        self.scrollArea.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
+        self.scrollArea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.scrollArea.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollArea.setAlignment(QtCore.Qt.AlignCenter)
+        self.scrollArea.setObjectName("scrollArea")
+        self.scrollAreaWidgetContents = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 649, 379))
+        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+        self.student_list = QtWidgets.QLabel(list)
+        self.student_list.setGeometry(QtCore.QRect(130, 530, 531, 51))
+        font = QtGui.QFont()
+        font.setFamily("궁서체")
+        font.setPointSize(12)
+        self.student_list.setFont(font)
+        self.student_list.setText("")
+        self.student_list.setObjectName("student_list")
+        self.label_2 = QtWidgets.QLabel(list)
+        self.label_2.setGeometry(QtCore.QRect(60, 80, 701, 51))
+        font = QtGui.QFont()
+        font.setFamily("궁서체")
+        font.setPointSize(14)
+        self.label_2.setFont(font)
+        self.label_2.setObjectName("label_2")
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(list)
+        QtCore.QMetaObject.connectSlotsByName(list)
 
-    def retranslateUi(self, Form):
+    def retranslateUi(self, list):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
-        self.label.setText(_translate("Form", "기숙사생 명단"))
+        list.setWindowTitle(_translate("list", "Form"))
+        self.label.setText(_translate("list", "기숙사생 명단"))
+        self.label_2.setText(_translate("list", "호실    이름          상태        업데이트 날짜"))
