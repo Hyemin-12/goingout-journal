@@ -2,7 +2,7 @@ import os
 import sys
 
 from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
+from PyQt5.QtGui import *   
 from app import *
 from PyQt5 import uic
 from PyQt5.QtCore import *
@@ -129,10 +129,26 @@ class statusWindow(QDialog, QWidget, form_statusWindow):
         self.status_title.show()
         self.groupBox.show()
         self.names = getParticularStudents(self.room_number.toPlainText())
-        self.member1.setText(self.names[0])
-        self.member2.setText(self.names[1])
-        self.member3.setText(self.names[2])
-        self.member4.setText(self.names[3])
+        if len(self.names) == 1:
+            self.member1.setText(self.names[0])
+            self.member2.hide()
+            self.member3.hide()
+            self.member4.hide()
+        elif len(self.names) == 2:
+            self.member1.setText(self.names[0])
+            self.member2.setText(self.names[1])
+            self.member3.hide()
+            self.member4.hide()
+        elif len(self.names) == 3:
+            self.member1.setText(self.names[0])
+            self.member2.setText(self.names[1])
+            self.member3.setText(self.names[2])
+            self.member4.hide()
+        else:
+            self.member1.setText(self.names[0])
+            self.member2.setText(self.names[1])
+            self.member3.setText(self.names[2])
+            self.member4.setText(self.names[3])
 
     # 특정 기숙사생 상태 확인하기
     def checkStatus(self):
