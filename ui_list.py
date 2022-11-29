@@ -15,6 +15,7 @@ class Ui_list(object):
     def setupUi(self, list):
         list.setObjectName("list")
         list.resize(800, 600)
+        list.setStyleSheet("background:rgb(252, 252, 252);")
         self.label = QtWidgets.QLabel(list)
         self.label.setGeometry(QtCore.QRect(260, 30, 381, 51))
         font = QtGui.QFont()

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\python\프로젝트\add.ui'
+# Form implementation generated from reading ui file 'd:\python\외출일지\add.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -15,6 +15,7 @@ class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(800, 600)
+        Form.setStyleSheet("background:rgb(252, 252, 252);")
         self.add_title = QtWidgets.QLabel(Form)
         self.add_title.setGeometry(QtCore.QRect(280, 110, 271, 41))
         font = QtGui.QFont()
@@ -35,6 +36,7 @@ class Ui_Form(object):
         font.setFamily("궁서체")
         font.setPointSize(14)
         self.btn_add_student.setFont(font)
+        self.btn_add_student.setStyleSheet("background:rgb(150, 150, 255);")
         self.btn_add_student.setObjectName("btn_add_student")
         self.add_room_number = QtWidgets.QPlainTextEdit(Form)
         self.add_room_number.setGeometry(QtCore.QRect(390, 190, 211, 50))
@@ -63,6 +65,7 @@ class Ui_Form(object):
         font.setFamily("궁서체")
         font.setPointSize(14)
         self.btn_back.setFont(font)
+        self.btn_back.setStyleSheet("background:rgb(200, 200, 200);")
         self.btn_back.setObjectName("btn_back")
 
         self.retranslateUi(Form)

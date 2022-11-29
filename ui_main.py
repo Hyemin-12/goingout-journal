@@ -15,7 +15,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1000, 700)
-        MainWindow.setStyleSheet("background:rgb(255, 255, 255);")
+        MainWindow.setStyleSheet("background:rgb(252, 252, 252);")
         self.btn_list = QtWidgets.QPushButton(MainWindow)
         self.btn_list.setGeometry(QtCore.QRect(300, 230, 380, 81))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)
