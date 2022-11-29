@@ -50,9 +50,9 @@
   <widget class="QLabel" name="status_title">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>140</x>
      <y>220</y>
-     <width>561</width>
+     <width>521</width>
      <height>51</height>
     </rect>
    </property>
@@ -255,7 +255,7 @@
     <rect>
      <x>450</x>
      <y>430</y>
-     <width>220</width>
+     <width>301</width>
      <height>161</height>
     </rect>
    </property>
@@ -319,28 +319,28 @@
      <string>외박중</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QPushButton" name="save_status">
-   <property name="geometry">
-    <rect>
-     <x>640</x>
-     <y>480</y>
-     <width>100</width>
-     <height>50</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>궁서체</family>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background:rgb(255, 200, 255);</string>
-   </property>
-   <property name="text">
-    <string>저장하기</string>
-   </property>
+   <widget class="QPushButton" name="save_status">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>50</y>
+      <width>100</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>궁서체</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:rgb(255, 200, 255);</string>
+    </property>
+    <property name="text">
+     <string>저장하기</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

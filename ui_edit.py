@@ -33,7 +33,7 @@ class Ui_Form(object):
         self.btn_minus.setStyleSheet("background:rgb(255, 180, 150);")
         self.btn_minus.setObjectName("btn_minus")
         self.title_2 = QtWidgets.QLabel(Form)
-        self.title_2.setGeometry(QtCore.QRect(310, 100, 181, 61))
+        self.title_2.setGeometry(QtCore.QRect(340, 100, 111, 61))
         font = QtGui.QFont()
         font.setFamily("궁서체")
         font.setPointSize(18)

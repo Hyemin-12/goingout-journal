@@ -25,7 +25,7 @@ def addStudent(addRoom, addName, state = "잔류중"):
 
     date = datetime.now().date()
 
-    cur.execute("INSERT INTO studentTable (room, name, state, date) VALUES(?, ?, ?, ?)",[addRoom , addName, state, date])
+    cur.execute("INSERT INTO studentTable (room, name, state, date) VALUES(?, ?, ?, ?)",[addRoom, addName, state, date])
 
     db.commit()
     db.close()

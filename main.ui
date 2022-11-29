@@ -19,7 +19,7 @@
   <widget class="QPushButton" name="btn_list">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>310</x>
      <y>230</y>
      <width>380</width>
      <height>81</height>
@@ -47,7 +47,7 @@
   <widget class="QPushButton" name="btn_status">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>310</x>
      <y>330</y>
      <width>380</width>
      <height>81</height>
@@ -69,7 +69,7 @@
   <widget class="QPushButton" name="btn_edit">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>310</x>
      <y>430</y>
      <width>380</width>
      <height>81</height>
@@ -91,7 +91,7 @@
   <widget class="QPushButton" name="btn_search">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>310</x>
      <y>530</y>
      <width>380</width>
      <height>81</height>
@@ -113,9 +113,9 @@
   <widget class="QLabel" name="title">
    <property name="geometry">
     <rect>
-     <x>350</x>
+     <x>410</x>
      <y>110</y>
-     <width>321</width>
+     <width>181</width>
      <height>111</height>
     </rect>
    </property>

@@ -135,7 +135,6 @@ class statusWindow(QDialog, QWidget, form_statusWindow):
         self.names = getParticularStudents(self.room_number.toPlainText())
         if len(self.names) == 1:
             self.status_title.setText("기숙사생의 이름을 선택해주세요.")
-            self.status_title.setText("빈 방입니다.")
             self.member1.show()
             self.member1.setText(self.names[0])
         elif len(self.names) == 2:
