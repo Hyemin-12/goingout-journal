@@ -73,7 +73,7 @@ def getParticularStudents(checkRoom):
     db = sqlite3.connect(".\dormDB")
     cur = db.cursor()
 
-    cur.execute("SELECT * FROM studentTable WHERE room=?", [checkRoom])
+    cur.execute("SELECT * FROM studentTable WHERE room=? ORDER BY name", [checkRoom])
 
     res = []
 
